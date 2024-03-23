@@ -1,5 +1,6 @@
 package com.dph.ms.siscova.domain;
 
+import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -11,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Entity
@@ -24,6 +27,8 @@ public class Vacuna {
 	private String nomva;
 	private String estadova;
 	private String descripcionva;
+	@Temporal(TemporalType.DATE)
+	private Date fechaVencimiento;
 	
 	// Relación con Nacido
 	@ManyToMany(mappedBy = "vacunas")
