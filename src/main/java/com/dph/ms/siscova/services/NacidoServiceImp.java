@@ -69,9 +69,13 @@ public class NacidoServiceImp implements NacidoService {
 	@Override
 	@Transactional
 	public void eliminar(Long i) throws EntityNotFoundException, IllegalOperationException {
-		nacRep.findById(i).orElseThrow(
+		Nacido nacEntity = nacRep.findById(i).orElseThrow(
 				()->new EntityNotFoundException(EntityNotFoundExceptionMessages.NACIDO_NOT_FOUND)
 				);
+		
+		if(nacEntity.getVacunas()!=null) {
+			throw new IllegalOperationException("El nacido ya recibio una vacuna.");
+		}
 		
 		nacRep.deleteById(i);
 		
