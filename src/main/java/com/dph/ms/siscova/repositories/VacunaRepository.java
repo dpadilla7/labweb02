@@ -8,4 +8,5 @@ import com.dph.ms.siscova.domain.Vacuna;
 
 public interface VacunaRepository extends JpaRepository<Vacuna, Long> {
 	Optional<Vacuna> findByEstadova(String estadova);
+	Optional<Vacuna> findByNomva(String nomva);
 }
