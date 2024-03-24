@@ -72,13 +72,13 @@ public class VacunaServiceImp implements VacunaService {
 	@Override
 	@Transactional
 	public void eliminar(Long id) throws EntityNotFoundException, IllegalOperationException {
-		Vacuna vacEntity = vacRep.findById(id).orElseThrow(
+		vacRep.findById(id).orElseThrow(
 				()->new EntityNotFoundException(EntityNotFoundExceptionMessages.VACUNA_NOT_FOUND)
 				);			
 		
-		if(vacEntity.getNacidos()!=null) {
+		/*if(vacEntity.getNacidos()!=null) {
 			throw new IllegalOperationException("La vacuna fue aplicada a un nacido");
-		}
+		}*/
 		vacRep.deleteById(id);
 
 	}
