@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
@@ -34,6 +35,7 @@ public class Nacido {
 	private Date fechaNacimiento;
 	
 	@ManyToMany
+	@JsonIgnore
 	private List<Vacuna> vacunas;
 	
 }

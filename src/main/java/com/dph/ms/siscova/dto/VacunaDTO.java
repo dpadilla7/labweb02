@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.dph.ms.siscova.domain.Nacido;
 
-import jakarta.validation.constraints.Future;
+//import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -25,7 +25,6 @@ public class VacunaDTO {
 	private String estadova;
 	@NotBlank(message = "Ingrese alguna descripcion")
 	private String descripcionva;
-	@Future
 	@NotNull(message = "La fecha de vencimiento de la vacuna no puede estar vacía")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaVencimiento;

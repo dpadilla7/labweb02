@@ -9,7 +9,6 @@ import com.dph.ms.siscova.domain.Vacuna;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -31,7 +30,6 @@ public class NacidoDTO {
     @Size(min = 8, max = 8, message = "El DNI debe tener exactamente 8 caracteres")
 	@Pattern(regexp = "\\d+", message = "El DNI debe contener solo dígitos")
 	private String dni;
-	@PastOrPresent
 	@NotNull(message = "La fecha de nacimiento no puede estar vacía")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
